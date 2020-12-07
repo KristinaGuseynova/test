@@ -41,4 +41,36 @@ public class googleTests {
         assertEquals("1", driver.findElement(By.xpath("//span[@jsname='VssY5c']")).getText());
         driver.quit();
     }
+
+    @Test
+    public void test2() throws IOException {
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://google.com");
+        driver.findElement(By.cssSelector("input.gLFyf.gsfi")).sendKeys("калькулятор", Keys.ENTER);
+        driver.findElement(By.xpath("//div[@jsname='abcgof']")).click();
+        driver.findElement(By.xpath("//div[@jsname='WxTTNd']")).click();
+        driver.findElement(By.xpath("//div[@jsname='bkEvMb']")).click();
+        driver.findElement(By.xpath("//div[@jsname='Pt8tGc']")).click();
+        //driver.findElement(By.cssSelector("div.PaQdxb.A2W7l")).click();
+        //BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        //String s = reader.readLine();
+        assertEquals("Infinity", driver.findElement(By.xpath("//span[@jsname='VssY5c']")).getText());
+        driver.quit();
+    }
+
+    @Test
+    public void test3() throws IOException {
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.get("http://google.com");
+        driver.findElement(By.cssSelector("input.gLFyf.gsfi")).sendKeys("калькулятор", Keys.ENTER);
+        driver.findElement(By.xpath("//div[@jsname='aN1RFf']")).click();
+        driver.findElement(By.xpath("//div[@jsname='Pt8tGc']")).click();
+        //driver.findElement(By.cssSelector("div.PaQdxb.A2W7l")).click();
+        //BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        //String s = reader.readLine();
+        assertEquals("Error", driver.findElement(By.xpath("//span[@jsname='VssY5c']")).getText());
+        driver.quit();
+    }
 }
